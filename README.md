@@ -9,6 +9,8 @@
 
 **An AI Agent Skill — not a standalone app.** It runs inside Claude Code, Cursor, Cline, or Hermes to automate foreign-trade B2B lead research, decision-maker discovery, customs/import signal checks, outreach draft generation, and controlled SMTP sending.
 
+From the team behind [b2binsights.io](https://b2binsights.io) — B2B export intelligence for Chinese manufacturers.
+
 Designed for export sales teams, founders, and B2B sellers who need traceable, verifiable leads — not spam lists. Every company, contact, score, decision maker, and outreach draft is tied to source URLs and structured artifacts. Quality gates override target count.
 
 ## Features
