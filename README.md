@@ -11,6 +11,18 @@
 
 Designed for export sales teams, founders, and B2B sellers who need traceable, verifiable leads — not spam lists. Every company, contact, score, decision maker, and outreach draft is tied to source URLs and structured artifacts. Quality gates override target count.
 
+## Features
+
+| # | Feature | What It Means |
+|---|---------|---------------|
+| 1 | **AI + Code Separation** | AI owns strategy, judgment, language choice. Python scripts own deterministic work (reading, extracting, validating, sending). Neither can fully operate without the other — no black-box prompts, no blind automation. |
+| 2 | **Multi-Platform** | One skill runs on **Claude Code**, **Cursor**, **Cline**, and **Hermes**. Platform-specific files adapt the same pipeline to each agent's capabilities. |
+| 3 | **Evidence-Driven** | Every company, contact, score, and outreach draft is tied to source URLs. No unverifiable claims. Full audit trail from search to send. |
+| 4 | **Compliance-First** | Hash-locked sending gates, suppression lists, opt-out enforcement, no auto-send to inferred emails. Built for legal B2B outreach, not spam. |
+| 5 | **Deterministic Pipeline** | 18 Python scripts (4,872 lines) handle all data transformation. Schema validation at every stage via `contracts.py`. Results are reproducible, not probabilistic. |
+| 6 | **Quality Gates** | Hard acceptance gates override target counts. A lead cannot enter strict output unless company reality, buyer-role evidence, contactability, and source URLs all exist. Never relax to hit a number. |
+| 7 | **Full Coverage** | From product brief → multi-lane search → website reading → contact extraction → scoring → decision-maker discovery → customs signals → outreach templates → personalized drafts → evaluation → approval → SMTP sending — one unified workflow. |
+
 ---
 
 ## Quick Start
