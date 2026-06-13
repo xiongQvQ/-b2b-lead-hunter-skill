@@ -6,7 +6,9 @@
 [![Platform: Cursor](https://img.shields.io/badge/Cursor-ready-blueviolet)](#)
 [![Platform: Cline](https://img.shields.io/badge/Cline-ready-orange)](#)
 
-**证据驱动的外贸 B2B 客户挖掘工具**——帮你找海外买家、决策人、海关信号，生成开发信，受控发送。
+**一款 AI Agent Skill（技能包），不是独立应用。** 它运行在 Claude Code / Cursor / Cline / Hermes 等 AI 助手中，帮你完成外贸客户挖掘全流程。
+
+证据驱动的外贸 B2B 客户挖掘——找海外买家、决策人、海关信号，生成开发信，受控发送。
 
 专为外贸团队、工厂老板、跨境电商卖家设计。每一家公司、联系人、评分、决策人、开发信都绑定来源 URL 和结构化数据。质量门禁优先于数量。
 
