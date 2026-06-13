@@ -15,6 +15,8 @@ From the team behind [b2binsights.io](https://b2binsights.io) — B2B export int
 
 Designed for export sales teams, founders, and B2B sellers who need traceable, verifiable leads — not spam lists. Every company, contact, score, decision maker, and outreach draft is tied to source URLs and structured artifacts. Quality gates override target count.
 
+📺 [Watch demo on Bilibili](https://b23.tv/9Nx47Xx) (Chinese walkthrough)
+
 ## Features
 
 | # | Feature | What It Means |
