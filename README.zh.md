@@ -1,3 +1,5 @@
+[![English](https://img.shields.io/badge/lang-English-blue)](README.md) [![中文](https://img.shields.io/badge/lang-中文-red)](README.zh.md)
+
 # B2B Lead Hunter · 外贸客户挖掘助手
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](#)
