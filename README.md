@@ -260,6 +260,20 @@ Contributions are welcome. Please open an issue or PR.
 
 ---
 
+## Support
+
+If this project helps your export business, consider supporting it:
+
+- ☕ [Buy me a coffee](https://buymeacoffee.com/bowen007)
+- 💬 WeChat (tips & feedback)
+
+<p align="left">
+  <img src="assets/images/WechatIMG1255.jpeg" width="200" alt="WeChat QR" />
+  <img src="assets/images/WechatIMG1256.jpeg" width="200" alt="Support QR" />
+</p>
+
+---
+
 ## License
 
 MIT © [xiongbojian](LICENSE)

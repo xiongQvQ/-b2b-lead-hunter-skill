@@ -266,6 +266,20 @@ b2b-lead-hunter/
 
 ---
 
+## 赞助
+
+如果这个项目对你的外贸业务有帮助，欢迎支持：
+
+- ☕ [请我喝咖啡（Buy me a coffee）](https://buymeacoffee.com/bowen007)
+- 💬 微信打赏 & 交流
+
+<p align="left">
+  <img src="assets/images/WechatIMG1255.jpeg" width="200" alt="微信二维码" />
+  <img src="assets/images/WechatIMG1256.jpeg" width="200" alt="赞赏码" />
+</p>
+
+---
+
 ## 许可证
 
 MIT © [xiongbojian](LICENSE)
