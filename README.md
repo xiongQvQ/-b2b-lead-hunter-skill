@@ -5,6 +5,7 @@
 [![Platform: Claude Code](https://img.shields.io/badge/Claude%20Code-ready-black)](#)
 [![Platform: Cursor](https://img.shields.io/badge/Cursor-ready-blueviolet)](#)
 [![Platform: Cline](https://img.shields.io/badge/Cline-ready-orange)](#)
+[![中文文档](https://img.shields.io/badge/中文-README-red)](README.zh.md)
 
 **Evidence-backed foreign-trade B2B lead research, decision-maker discovery, customs/import signal checks, outreach draft generation, and controlled SMTP sending.**
 
