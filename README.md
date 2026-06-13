@@ -37,16 +37,57 @@ cat lead-runs/demo/pilot-stats.json
 
 ---
 
-## Platforms
+## Installation by Platform
 
-| Platform | File | Guide |
-|----------|------|-------|
-| **Claude Code** | [`CLAUDE.md`](CLAUDE.md) | Native — use Claude Code's web search, file ops, and terminal |
-| **Cursor** | `.cursor/rules/b2b-lead-hunter.mdc` | Loaded automatically in Cursor Composer/Agent |
-| **Cline (VS Code)** | [`.clinerules`](.clinerules) | Auto-loaded by Cline at project root |
-| **Hermes** | [`SKILL.md`](SKILL.md) | Original skill definition (Hermes runtime) |
+This is an **AI agent skill** — it runs inside an agent, not as a standalone app. Here's how to install it on each platform.
 
-All platforms share the same `scripts/`, `references/`, and `templates/` directories.
+### Claude Code
+
+```bash
+# Option A: Open project directly (CLAUDE.md loads automatically)
+cd b2b-lead-hunter
+claude
+
+# Option B: Install as a Claude Code project (accessible from anywhere)
+claude project add b2b-lead-hunter --path /path/to/b2b-lead-hunter
+claude project use b2b-lead-hunter
+
+# Option C: From another directory, reference this repo
+claude --project /path/to/b2b-lead-hunter
+```
+
+Once loaded, Claude Code reads [`CLAUDE.md`](CLAUDE.md) for context. It uses `WebSearch` tool for queries, terminal for running Python scripts, and file ops for reading/writing artifacts.
+
+### Cursor
+
+```bash
+# Open the project folder in Cursor
+cursor /path/to/b2b-lead-hunter
+```
+
+The rules in `.cursor/rules/b2b-lead-hunter.mdc` are loaded automatically when Cursor Agent operates on files matching the `globs` pattern. Use `@web()` for search queries.
+
+### Cline (VS Code)
+
+```bash
+# Open the project folder in VS Code with Cline installed
+code /path/to/b2b-lead-hunter
+```
+
+Cline auto-loads [`.clinerules`](.clinerules) at the project root on startup. No additional config needed. Use `@web` for search queries and the terminal for Python scripts.
+
+### Hermes
+
+```bash
+# Clone the skill into your Hermes skills directory
+git clone https://github.com/your-username/b2b-lead-hunter.git hermes-skills/business/b2b-lead-hunter/
+```
+
+Hermes reads [`SKILL.md`](SKILL.md) as the skill entrypoint. No other setup required. The `name` field in `SKILL.md` metadata registers it as `b2b-lead-hunter`.
+
+---
+
+> All platforms share the same `scripts/`, `references/`, and `templates/` directories. Platform-specific files (`CLAUDE.md`, `.clinerules`, `.cursor/rules/`, `SKILL.md`) each contain the same pipeline logic adapted to that agent's capabilities.
 
 ---
 

@@ -38,16 +38,57 @@ cat lead-runs/demo/pilot-stats.json
 
 ---
 
-## 支持的 AI 平台
+## 安装指南（按平台）
 
-| 平台 | 配置文件 | 说明 |
-|------|----------|------|
-| **Claude Code** | [`CLAUDE.md`](CLAUDE.md) | 原生支持，使用 Claude 的 WebSearch + 文件操作 + 终端 |
-| **Cursor** | `.cursor/rules/b2b-lead-hunter.mdc` | 在 Cursor Composer/Agent 中自动加载 |
-| **Cline (VS Code)** | [`.clinerules`](.clinerules) | Cline 启动时自动读取 |
-| **Hermes** | [`SKILL.md`](SKILL.md) | 原始 Hermes agent 定义 |
+这是一个 **AI Agent Skill（技能包）**——它在 AI 助手内部运行，不是独立应用。以下是各平台的安装方式。
 
-所有平台共享同一个 `scripts/`、`references/`、`templates/` 目录。
+### Claude Code
+
+```bash
+# 方式 A：直接打开项目（CLAUDE.md 自动加载）
+cd b2b-lead-hunter
+claude
+
+# 方式 B：安装为 Claude Code 项目（可以从任意目录使用）
+claude project add b2b-lead-hunter --path /path/to/b2b-lead-hunter
+claude project use b2b-lead-hunter
+
+# 方式 C：从其他目录引用
+claude --project /path/to/b2b-lead-hunter
+```
+
+加载后，Claude Code 会自动读取 [`CLAUDE.md`](CLAUDE.md) 获取上下文。它使用内置的 `WebSearch` 工具搜索、终端运行 Python 脚本、文件操作读写工件。
+
+### Cursor
+
+```bash
+# 直接在 Cursor 中打开项目文件夹
+cursor /path/to/b2b-lead-hunter
+```
+
+`.cursor/rules/b2b-lead-hunter.mdc` 中的规则会在 Cursor Agent 操作匹配 `globs` 模式的文件时自动加载。使用 `@web()` 进行搜索查询。
+
+### Cline (VS Code)
+
+```bash
+# 在安装了 Cline 的 VS Code 中打开项目
+code /path/to/b2b-lead-hunter
+```
+
+Cline 启动时会自动读取项目根目录的 [`.clinerules`](.clinerules) 文件，无需额外配置。使用 `@web` 搜索，终端运行 Python 脚本。
+
+### Hermes
+
+```bash
+# 将 skill 克隆到 Hermes skills 目录
+git clone https://github.com/你的用户名/b2b-lead-hunter.git hermes-skills/business/b2b-lead-hunter/
+```
+
+Hermes 以 [`SKILL.md`](SKILL.md) 作为技能入口点。`SKILL.md` 元数据中的 `name` 字段将其注册为 `b2b-lead-hunter`。
+
+---
+
+> 所有平台共享 `scripts/`、`references/`、`templates/` 目录。各平台专属文件（`CLAUDE.md`、`.clinerules`、`.cursor/rules/`、`SKILL.md`）包含相同的流程逻辑，但适配了对应 agent 的能力（搜索方式、工具调用等）。
 
 ---
 
