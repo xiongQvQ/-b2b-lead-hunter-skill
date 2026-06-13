@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["product", "target"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "product": {
+      "type": "object",
+      "required": ["category"],
+      "properties": {
+        "category": {"type": "string"},
+        "products": {"type": "array", "items": {"type": "string"}},
+        "description": {"type": "string"}
+      }
+    },
+    "seller": {
+      "type": "object",
+      "properties": {
+        "company_name": {"type": "string"},
+        "website": {"type": "string"},
+        "email": {"type": "string"},
+        "phone": {"type": "string"},
+        "address": {"type": "string"}
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": ["regions", "buyer_roles"],
+      "properties": {
+        "regions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["country"],
+            "properties": {
+              "country": {"type": "string"},
+              "gl": {"type": "string"},
+              "hl": {"type": "string"},
+              "language": {"type": "string"}
+            }
+          }
+        },
+        "buyer_roles": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "industry_focus": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "negative_criteria": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "evidence_required": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "competitor_brands": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "search_config": {
+      "type": "object",
+      "properties": {
+        "mode": {"type": "string", "enum": ["pilot", "full"]},
+        "results_per_query": {"type": "integer", "minimum": 1, "default": 10},
+        "max_queries": {"type": "integer", "minimum": 1},
+        "lanes": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "local_language_required": {"type": "boolean"}
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "template_id",
+    "cluster_key",
+    "country",
+    "language",
+    "buyer_role",
+    "product_angle",
+    "subject_template",
+    "body_template",
+    "required_variables",
+    "tone_notes",
+    "claim_boundaries",
+    "created_at"
+  ],
+  "properties": {
+    "template_id": {"type": "string"},
+    "cluster_key": {"type": "string"},
+    "country": {"type": "string"},
+    "language": {"type": "string"},
+    "buyer_role": {"type": "string"},
+    "product_angle": {"type": "string"},
+    "subject_template": {"type": "string"},
+    "body_template": {"type": "string"},
+    "required_variables": {"type": "array", "items": {"type": "string"}},
+    "tone_notes": {"type": "array", "items": {"type": "string"}},
+    "claim_boundaries": {"type": "array", "items": {"type": "string"}},
+    "created_at": {"type": "string"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "company_name",
+    "confirmed_import_activity",
+    "confirmed_asia_import_signal",
+    "fit_score_adjustment",
+    "evidence"
+  ],
+  "properties": {
+    "company_name": {"type": "string"},
+    "confirmed_import_activity": {"type": "boolean"},
+    "confirmed_asia_import_signal": {"type": "boolean"},
+    "fit_score_adjustment": {"type": "integer", "enum": [0, 1, 2]},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_url",
+          "platform",
+          "title",
+          "shipment_count",
+          "latest_shipment_date",
+          "hs_codes",
+          "suppliers",
+          "asia_origin_terms",
+          "snippet",
+          "confidence"
+        ],
+        "properties": {
+          "source_url": {"type": "string"},
+          "platform": {"type": "string", "enum": ["panjiva", "importgenius", "importyeti", "uktradeinfo", "web"]},
+          "title": {"type": "string"},
+          "shipment_count": {"type": ["integer", "null"]},
+          "latest_shipment_date": {"type": "string"},
+          "hs_codes": {"type": "array", "items": {"type": "string"}},
+          "suppliers": {"type": "array", "items": {"type": "string"}},
+          "asia_origin_terms": {"type": "array", "items": {"type": "string"}},
+          "snippet": {"type": "string"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

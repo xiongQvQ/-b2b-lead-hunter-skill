@@ -1,0 +1,13 @@
+{
+  "smtp_host": "smtp.example.com",
+  "smtp_port": 587,
+  "use_starttls": true,
+  "username": "sales@example.com",
+  "password_env": "SMTP_APP_PASSWORD",
+  "from_name": "Company Sales Team",
+  "from_email": "sales@example.com",
+  "reply_to": "sales@example.com",
+  "daily_limit": 20,
+  "delay_seconds": 120,
+  "max_per_company": 1
+}

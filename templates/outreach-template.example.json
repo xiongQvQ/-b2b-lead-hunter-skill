@@ -1,0 +1,33 @@
+{
+  "template_id": "tpl-germany-de-distributor-electrical-switches",
+  "cluster_key": "germany-de-distributor-electrical-switches",
+  "country": "Germany",
+  "language": "de",
+  "buyer_role": "distributor",
+  "product_angle": "electrical switches",
+  "subject_template": "{product} fuer {country}",
+  "body_template": "Guten Tag {greeting},\n\nich habe {company_name} bei der Recherche nach passenden B2B-Partnern in {country} gefunden.\n\n{personalization_reason}\n\nWir sind {sender_company} und liefern {product} fuer {application}.\n\n{cta}\n\nMit freundlichen Gruessen\n{signature}\n\n{opt_out}",
+  "required_variables": [
+    "company_name",
+    "country",
+    "greeting",
+    "sender_company",
+    "product",
+    "application",
+    "personalization_reason",
+    "cta",
+    "signature",
+    "opt_out"
+  ],
+  "tone_notes": [
+    "Formal German B2B tone.",
+    "Keep the first touch concise.",
+    "Avoid unsupported certification, stock, or price claims."
+  ],
+  "claim_boundaries": [
+    "Do not claim local stock unless confirmed.",
+    "Do not claim certifications unless listed in sender-profile.",
+    "Do not imply prior relationship."
+  ],
+  "created_at": "2026-05-26T00:00:00Z"
+}

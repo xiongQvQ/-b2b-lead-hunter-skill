@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "draft_id",
+    "draft_version",
+    "lead_id",
+    "company_name",
+    "website",
+    "country",
+    "recipient_email",
+    "recipient_type",
+    "language",
+    "language_confidence",
+    "language_reason",
+    "subject",
+    "body_text",
+    "personalization_points",
+    "source_urls",
+    "offer_angle",
+    "cta",
+    "send_recommendation",
+    "approval_status",
+    "state",
+    "created_at"
+  ],
+  "properties": {
+    "draft_id": {"type": "string"},
+    "draft_version": {"type": "integer", "minimum": 1},
+    "template_id": {"type": "string"},
+    "template_cluster_key": {"type": "string"},
+    "lead_id": {"type": "string"},
+    "candidate_id": {"type": "string"},
+    "company_domain": {"type": "string"},
+    "company_name": {"type": "string"},
+    "website": {"type": "string"},
+    "country": {"type": "string"},
+    "region": {"type": "string"},
+    "recipient_email": {"type": "string"},
+    "recipient_type": {"type": "string", "enum": ["generic", "person", "inferred"]},
+    "recipient_name": {"type": "string"},
+    "recipient_title": {"type": "string"},
+    "language": {"type": "string"},
+    "language_confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+    "language_reason": {"type": "string"},
+    "fallback_language": {"type": "string"},
+    "localization_risk": {"type": "string", "enum": ["low", "medium", "high"]},
+    "subject": {"type": "string"},
+    "body_text": {"type": "string"},
+    "personalization_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim", "source_url"],
+        "properties": {
+          "claim": {"type": "string"},
+          "source_url": {"type": "string"}
+        }
+      }
+    },
+    "source_urls": {"type": "array", "items": {"type": "string"}},
+    "claims_made": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim", "claim_type", "support", "risk"],
+        "properties": {
+          "claim": {"type": "string"},
+          "claim_type": {"type": "string", "enum": ["about_sender", "about_recipient", "about_fit"]},
+          "support": {"type": "string"},
+          "source_url": {"type": "string"},
+          "risk": {"type": "string", "enum": ["low", "medium", "high"]}
+        }
+      }
+    },
+    "offer_angle": {"type": "string"},
+    "cta": {"type": "string"},
+    "opt_out_line": {"type": "string"},
+    "send_recommendation": {"type": "string", "enum": ["send", "review", "skip"]},
+    "risk_flags": {"type": "array", "items": {"type": "string"}},
+    "approval_status": {"type": "string", "enum": ["pending", "approved", "rejected"]},
+    "state": {
+      "type": "string",
+      "enum": [
+        "drafted",
+        "review_pending",
+        "approved",
+        "dry_run_checked",
+        "queued",
+        "sending",
+        "sent",
+        "failed_retryable",
+        "failed_final",
+        "suppressed",
+        "skipped"
+      ]
+    },
+    "approved_by": {"type": "string"},
+    "approved_at": {"type": "string"},
+    "approved_body_hash": {"type": "string"},
+    "review_notes": {"type": "string"},
+    "created_at": {"type": "string"},
+    "sent_at": {"type": "string"},
+    "send_result": {"type": "string"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"approval_status": {"const": "approved"}},
+        "required": ["approval_status"]
+      },
+      "then": {
+        "required": ["approved_body_hash"],
+        "properties": {
+          "state": {"const": "approved"},
+          "send_recommendation": {"const": "send"}
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

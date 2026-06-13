@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "draft_id",
+    "lead_id",
+    "recipient_email",
+    "company_domain",
+    "timestamp",
+    "result"
+  ],
+  "properties": {
+    "event_id": {"type": "string"},
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "dry_run",
+        "queued",
+        "send_attempt",
+        "send_success",
+        "send_failure",
+        "suppressed",
+        "duplicate_skipped",
+        "hash_mismatch",
+        "evaluation_missing",
+        "approval_missing"
+      ]
+    },
+    "draft_id": {"type": "string"},
+    "lead_id": {"type": "string"},
+    "recipient_email": {"type": "string"},
+    "company_domain": {"type": "string"},
+    "subject": {"type": "string"},
+    "approved_body_hash": {"type": "string"},
+    "message_id": {"type": "string"},
+    "smtp_response": {"type": "string"},
+    "timestamp": {"type": "string"},
+    "result": {"type": "string", "enum": ["ok", "skipped", "failed"]},
+    "error": {"type": "string"}
+  },
+  "additionalProperties": false
+}

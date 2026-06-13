@@ -1,0 +1,44 @@
+# --- Secrets & credentials ---
+.env
+*.pem
+*_API_KEY*
+*_SECRET*
+*_PASSWORD*
+*_TOKEN*
+
+# --- Config with secrets ---
+_shared/smtp-config.json
+
+# --- Lead & run data ---
+lead-runs/
+output/
+out/
+data/
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Misc ---
+*.log
+*.tmp

@@ -1,0 +1,56 @@
+{
+  "run_id": "electrical-switch-eu-001",
+  "product": {
+    "category": "electrical switches and control components",
+    "products": [
+      "industrial toggle switches",
+      "push-button switches",
+      "selector switches",
+      "limit switches"
+    ],
+    "description": "We manufacture industrial-grade electrical switches for machinery, control panels, and industrial equipment. CE and RoHS certified. OEM/ODM available with 15-year export experience."
+  },
+  "seller": {
+    "company_name": "Example Export Co.",
+    "website": "https://www.example-export.com",
+    "email": "sales@example-export.com"
+  },
+  "target": {
+    "regions": [
+      {"country": "Germany", "gl": "de", "hl": "de", "language": "de"},
+      {"country": "France", "gl": "fr", "hl": "fr", "language": "fr"},
+      {"country": "Poland", "gl": "pl", "hl": "pl", "language": "pl"}
+    ],
+    "buyer_roles": [
+      "distributor",
+      "wholesaler",
+      "importer",
+      "industrial supplier"
+    ],
+    "industry_focus": [
+      "industrial automation",
+      "electrical components distribution",
+      "control panel manufacturing",
+      "machinery OEM"
+    ],
+    "negative_criteria": [
+      "direct manufacturers of similar switches",
+      "B2C-only e-commerce stores",
+      "local electrical repair services",
+      "retail electrical stores"
+    ],
+    "evidence_required": [
+      "company website with product lines",
+      "business registration or industry listing",
+      "contact email or phone"
+    ]
+  },
+  "competitor_brands": ["Siemens", "Schneider Electric", "Eaton", "ABB", "Omron"],
+  "search_config": {
+    "mode": "pilot",
+    "results_per_query": 10,
+    "max_queries": 8,
+    "lanes": ["organic", "maps", "b2b_platform"],
+    "local_language_required": true
+  }
+}

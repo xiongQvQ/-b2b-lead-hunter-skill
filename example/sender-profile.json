@@ -1,0 +1,36 @@
+{
+  "company_name": "Example Export Co.",
+  "website": "https://www.example-export.com",
+  "sender_name": "Sales Team",
+  "sender_title": "Export Sales",
+  "from_email": "sales@example-export.com",
+  "reply_to": "sales@example-export.com",
+  "product_lines": ["industrial electrical switches", "control components"],
+  "target_applications": ["industrial machinery, control panels, and automation equipment"],
+  "localized_product_lines": {
+    "de": ["Industrie-Schalter", "Steuerungskomponenten"],
+    "fr": ["interrupteurs industriels", "composants de commande"],
+    "pl": ["przelaczniki przemyslowe", "elementy sterujace"]
+  },
+  "localized_target_applications": {
+    "de": ["Industriemaschinen, Schalttafeln und Automatisierungsanlagen"],
+    "fr": ["machines industrielles, armoires de commande et automatismes"],
+    "pl": ["maszyny przemyslowe, pulpity sterownicze i automatyka"]
+  },
+  "strengths": ["OEM/ODM support", "CE and RoHS certified", "small-batch trial orders accepted", "15 years export experience"],
+  "certifications": ["CE", "RoHS"],
+  "allowed_claims": [
+    "We supply industrial electrical switches for machinery, control panels, and automation equipment.",
+    "CE and RoHS certified products.",
+    "We support OEM/ODM with small-batch trial orders.",
+    "15 years of export experience to European markets."
+  ],
+  "forbidden_claims": [
+    "Do not claim local stock or warehouse in Europe.",
+    "Do not claim certifications not listed above.",
+    "Do not mention specific customer names.",
+    "Do not claim prices or delivery times without prior confirmation."
+  ],
+  "catalog_url": "",
+  "signature": "Sales Team\nExample Export Co.\nsales@example-export.com\nhttps://www.example-export.com"
+}

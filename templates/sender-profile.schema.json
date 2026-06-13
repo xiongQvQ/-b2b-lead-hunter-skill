@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "company_name",
+    "website",
+    "sender_name",
+    "sender_title",
+    "from_email",
+    "reply_to",
+    "product_lines",
+    "allowed_claims",
+    "forbidden_claims",
+    "signature"
+  ],
+  "properties": {
+    "company_name": {"type": "string"},
+    "website": {"type": "string"},
+    "sender_name": {"type": "string"},
+    "sender_title": {"type": "string"},
+    "from_email": {"type": "string"},
+    "reply_to": {"type": "string"},
+    "product_lines": {"type": "array", "items": {"type": "string"}},
+    "target_applications": {"type": "array", "items": {"type": "string"}},
+    "strengths": {"type": "array", "items": {"type": "string"}},
+    "certifications": {"type": "array", "items": {"type": "string"}},
+    "allowed_claims": {"type": "array", "items": {"type": "string"}},
+    "forbidden_claims": {"type": "array", "items": {"type": "string"}},
+    "localized_product_lines": {
+      "type": "object",
+      "additionalProperties": {"type": "array", "items": {"type": "string"}}
+    },
+    "localized_target_applications": {
+      "type": "object",
+      "additionalProperties": {"type": "array", "items": {"type": "string"}}
+    },
+    "catalog_url": {"type": "string"},
+    "signature": {"type": "string"}
+  },
+  "additionalProperties": false
+}

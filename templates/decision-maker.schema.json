@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "decision_maker_id",
+    "lead_id",
+    "company_name",
+    "company_domain",
+    "name",
+    "role_category",
+    "email_type",
+    "source_type",
+    "source_url",
+    "contactability",
+    "send_allowed",
+    "confidence",
+    "created_at"
+  ],
+  "properties": {
+    "decision_maker_id": {"type": "string"},
+    "lead_id": {"type": "string"},
+    "company_name": {"type": "string"},
+    "company_domain": {"type": "string"},
+    "name": {"type": "string"},
+    "title": {"type": "string"},
+    "role_category": {"type": "string", "enum": ["procurement", "purchasing", "sourcing", "owner", "management", "product", "technical", "sales", "operations", "unknown"]},
+    "seniority": {"type": "string", "enum": ["executive", "director", "manager", "staff", "unknown"]},
+    "email": {"type": "string"},
+    "email_type": {"type": "string", "enum": ["public", "inferred", "unknown", "none"]},
+    "email_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "phone": {"type": "string"},
+    "linkedin": {"type": "string"},
+    "xing": {"type": "string"},
+    "source_type": {"type": "string", "enum": ["official_site", "pdf", "directory", "linkedin", "xing", "search_snippet", "manual", "inferred"]},
+    "source_url": {"type": "string"},
+    "source_query": {"type": "string"},
+    "evidence_text": {"type": "string"},
+    "contactability": {"type": "string", "enum": ["email_public", "email_inferred", "profile_only", "phone_public", "name_only"]},
+    "send_allowed": {"type": "boolean"},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "created_at": {"type": "string"}
+  }
+}

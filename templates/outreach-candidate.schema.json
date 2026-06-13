@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "lead_id",
+    "company_name",
+    "company_domain",
+    "priority",
+    "selected_channel",
+    "draft_allowed",
+    "selection_reason",
+    "created_at"
+  ],
+  "properties": {
+    "candidate_id": {"type": "string"},
+    "lead_id": {"type": "string"},
+    "company_name": {"type": "string"},
+    "company_domain": {"type": "string"},
+    "country": {"type": "string"},
+    "priority": {"type": "string", "enum": ["high", "medium", "low", "reject"]},
+    "selected_channel": {"type": "string", "enum": ["email", "contact_form", "review_only", "skip"]},
+    "selected_recipient_email": {"type": "string"},
+    "recipient_type": {"type": "string", "enum": ["generic", "person", "inferred", "none"]},
+    "domain_relation": {"type": "string", "enum": ["same_domain", "parent_domain", "third_party", "free_mail", "unknown", "none"]},
+    "recipient_rank": {"type": "integer", "minimum": 0},
+    "recipient_risk": {"type": "string", "enum": ["low", "medium", "high"]},
+    "draft_allowed": {"type": "boolean"},
+    "auto_send_allowed": {"type": "boolean"},
+    "selection_reason": {"type": "string"},
+    "blocked_reason": {"type": "string"},
+    "source_urls": {"type": "array", "items": {"type": "string"}},
+    "created_at": {"type": "string"}
+  },
+  "additionalProperties": false
+}

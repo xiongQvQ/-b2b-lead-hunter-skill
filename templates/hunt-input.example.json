@@ -1,0 +1,15 @@
+{
+  "product": "solar hybrid inverter 5-20kW",
+  "seller_context": "Factory producing CE-certified hybrid solar inverters for residential and small commercial systems.",
+  "target_regions": ["Germany", "Poland"],
+  "target_customer_profile": "Importers, electrical equipment distributors, solar installers with distribution capability, and renewable energy wholesalers.",
+  "negative_criteria": [
+    "Direct manufacturers of the same inverter product",
+    "B2C-only shops with no installation or wholesale signal",
+    "Companies outside target regions"
+  ],
+  "target_count": 30,
+  "max_rounds": 3,
+  "queries_per_round": 8,
+  "results_per_query": 10
+}

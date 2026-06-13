@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["company_name", "website", "fit_score", "contactability_score", "priority"],
+  "properties": {
+    "company_name": {"type": "string"},
+    "website": {"type": "string"},
+    "country": {"type": "string"},
+    "region": {"type": "string"},
+    "business_type": {"type": "array", "items": {"type": "string"}},
+    "industry": {"type": "string"},
+    "description": {"type": "string"},
+    "fit_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "contactability_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "evidence_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "priority": {"type": "string", "enum": ["high", "medium", "low", "reject"]},
+    "review_required": {"type": "boolean"},
+    "uncertainty_reason": {"type": "string"},
+    "missing_evidence": {"type": "array", "items": {"type": "string"}},
+    "source_quality": {"type": "string", "enum": ["official", "platform", "directory", "snippet", "mixed", "unknown"]},
+    "official_site_found": {"type": "boolean"},
+    "emails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["email", "type", "source_url", "domain_relation", "verification", "confidence"],
+        "properties": {
+          "email": {"type": "string"},
+          "type": {"type": "string", "enum": ["generic", "person", "inferred"]},
+          "source_url": {"type": "string"},
+          "domain_relation": {"type": "string", "enum": ["same_domain", "parent_domain", "third_party", "free_mail", "unknown"]},
+          "verification": {"type": "string", "enum": ["format_only"]},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+        }
+      }
+    },
+    "phones": {"type": "array", "items": {"type": "string"}},
+    "social": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "decision_makers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "decision_maker_id": {"type": "string"},
+          "lead_id": {"type": "string"},
+          "company_name": {"type": "string"},
+          "company_domain": {"type": "string"},
+          "name": {"type": "string"},
+          "title": {"type": "string"},
+          "role_category": {"type": "string", "enum": ["procurement", "purchasing", "sourcing", "owner", "management", "product", "technical", "sales", "operations", "unknown"]},
+          "seniority": {"type": "string", "enum": ["executive", "director", "manager", "staff", "unknown"]},
+          "email": {"type": "string"},
+          "email_type": {"type": "string", "enum": ["public", "inferred", "unknown", "none"]},
+          "email_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "phone": {"type": "string"},
+          "linkedin": {"type": "string"},
+          "xing": {"type": "string"},
+          "source_type": {"type": "string", "enum": ["official_site", "pdf", "directory", "linkedin", "xing", "search_snippet", "manual", "inferred"]},
+          "source_url": {"type": "string"},
+          "source_query": {"type": "string"},
+          "evidence_text": {"type": "string"},
+          "contactability": {"type": "string", "enum": ["email_public", "email_inferred", "profile_only", "phone_public", "name_only"]},
+          "send_allowed": {"type": "boolean"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "created_at": {"type": "string"}
+        }
+      }
+    },
+    "address": {"type": "string"},
+    "source_queries": {"type": "array", "items": {"type": "string"}},
+    "source_urls": {"type": "array", "items": {"type": "string"}},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim", "source_url"],
+        "properties": {
+          "claim": {"type": "string"},
+          "source_url": {"type": "string"}
+        }
+      }
+    },
+    "reject_reasons": {"type": "array", "items": {"type": "string"}},
+    "fit_reason_zh": {"type": "string"},
+    "contact_source": {"type": "string"},
+    "notes": {"type": "string"}
+  }
+}

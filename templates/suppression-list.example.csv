@@ -1,0 +1,4 @@
+type,value,reason,source,created_at
+email,buyer@example.com,opt_out,manual,2026-05-25
+domain,example.com,do_not_contact,manual,2026-05-25
+company,Example GmbH,not_relevant,manual,2026-05-25

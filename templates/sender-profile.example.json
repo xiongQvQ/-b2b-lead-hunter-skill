@@ -1,0 +1,35 @@
+{
+  "company_name": "Example Export Co.",
+  "website": "https://www.example-export.com",
+  "sender_name": "Sales Team",
+  "sender_title": "Export Sales",
+  "from_email": "sales@example-export.com",
+  "reply_to": "sales@example-export.com",
+  "product_lines": ["electrical switches"],
+  "target_applications": ["industrial equipment, appliances, and control panels"],
+  "localized_product_lines": {
+    "de": ["elektrische Schalter"],
+    "fr": ["interrupteurs electriques"],
+    "es": ["interruptores electricos"],
+    "pl": ["przelaczniki elektryczne"]
+  },
+  "localized_target_applications": {
+    "de": ["Industrieanlagen, Haushaltsgeraete und Schalttafeln"],
+    "fr": ["equipements industriels, appareils et panneaux de commande"],
+    "es": ["equipos industriales, electrodomesticos y paneles de control"],
+    "pl": ["urzadzenia przemyslowe, AGD i panele sterowania"]
+  },
+  "strengths": ["OEM/ODM support", "export packaging", "small-batch trial orders"],
+  "certifications": [],
+  "allowed_claims": [
+    "We supply electrical switches for industrial equipment, appliances, and control panels.",
+    "We can provide catalog, specifications, and quotation details on request."
+  ],
+  "forbidden_claims": [
+    "Do not claim local stock unless confirmed.",
+    "Do not claim certifications unless listed in this profile.",
+    "Do not mention existing customers unless provided by the user."
+  ],
+  "catalog_url": "",
+  "signature": "Sales Team\nExample Export Co.\nsales@example-export.com\nhttps://www.example-export.com"
+}
