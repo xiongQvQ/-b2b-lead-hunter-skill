@@ -1,3 +1,5 @@
+
+
 [![English](https://img.shields.io/badge/lang-English-blue)](README.md) [![中文](https://img.shields.io/badge/lang-中文-red)](README.zh.md)
 
 # B2B Lead Hunter
@@ -232,7 +234,7 @@ Check [`example/`](example/) for sample input files you can adapt to your own pr
 | `JINA_API_KEY` | Website reading | [jina.ai](https://jina.ai) (free tier available) |
 | `SERPER_API_KEY` | Maps/local search | [serper.dev](https://serper.dev) |
 | `TAVILY_API_KEY` | Decision-maker search | [tavily.com](https://tavily.com) |
-| SMTP password | Email sending | your email provider |
+| `SMTP_APP_PASSWORD` | Email sending | your email provider |
 
 ---
 
