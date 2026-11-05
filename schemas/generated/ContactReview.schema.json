@@ -1,0 +1,67 @@
+{
+  "$defs": {
+    "Quote": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 5,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "text"
+      ],
+      "title": "Quote",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contact_id": {
+      "title": "Contact Id",
+      "type": "string"
+    },
+    "person_confirmed": {
+      "title": "Person Confirmed",
+      "type": "boolean"
+    },
+    "employment_confirmed": {
+      "title": "Employment Confirmed",
+      "type": "boolean"
+    },
+    "role_relevant": {
+      "title": "Role Relevant",
+      "type": "boolean"
+    },
+    "quotes": {
+      "items": {
+        "$ref": "#/$defs/Quote"
+      },
+      "title": "Quotes",
+      "type": "array"
+    },
+    "unknowns": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unknowns",
+      "type": "array"
+    }
+  },
+  "required": [
+    "contact_id",
+    "person_confirmed",
+    "employment_confirmed",
+    "role_relevant",
+    "quotes"
+  ],
+  "title": "ContactReview",
+  "type": "object"
+}

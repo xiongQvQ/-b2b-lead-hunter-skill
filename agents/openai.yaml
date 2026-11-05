@@ -1,0 +1,13 @@
+interface:
+  display_name: AI 外贸获客
+  short_description: 按证据筛选海外买家、补全联系人、生成草稿与审核后首次触达
+  default_prompt: 使用 $b2b-lead-hunter，根据产品事实、市场和客户画像寻找海外客户，按证据区分匹配与采购意向，先交付可审核结果。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

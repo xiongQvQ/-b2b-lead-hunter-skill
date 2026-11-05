@@ -1,0 +1,12 @@
+{
+  "id": "generic",
+  "version": "1.0.0",
+  "product_fields": ["specification", "MOQ", "lead_time", "certification", "target_application", "supply_evidence"],
+  "buyer_roles": ["procurement", "technical specifier", "owner of a small importer"],
+  "evidence_rules": ["Require primary evidence of actual buyer activity and location", "Keep fit, buying signal and reachability separate", "Do not treat a listed email as purchasing intent"],
+  "negative_signals": ["only a directory", "supplier competitor with no buying evidence", "specification/certification conflict", "expired procurement window"],
+  "query_lanes": ["buyer", "trigger", "rfq", "channel", "ecosystem"],
+  "role_mapping": {"small_company": "owner", "technical_project": "technical specifier", "routine_replenishment": "procurement"},
+  "insight_questions": ["Why would this company buy?", "Why now?", "Who specifies and who approves?", "What supplier capability is actually evidenced?"],
+  "language_terms": {"en": ["request for quotation", "procurement", "distributor", "project", "replacement"]}
+}

@@ -1,0 +1,96 @@
+{
+  "$defs": {
+    "Quote": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 5,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "text"
+      ],
+      "title": "Quote",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "company_id": {
+      "title": "Company Id",
+      "type": "string"
+    },
+    "contact_id": {
+      "title": "Contact Id",
+      "type": "string"
+    },
+    "subject": {
+      "maxLength": 160,
+      "minLength": 3,
+      "title": "Subject",
+      "type": "string"
+    },
+    "body": {
+      "maxLength": 5000,
+      "minLength": 30,
+      "title": "Body",
+      "type": "string"
+    },
+    "observation": {
+      "title": "Observation",
+      "type": "string"
+    },
+    "hypothesis": {
+      "title": "Hypothesis",
+      "type": "string"
+    },
+    "hook": {
+      "title": "Hook",
+      "type": "string"
+    },
+    "evidence_quotes": {
+      "items": {
+        "$ref": "#/$defs/Quote"
+      },
+      "minItems": 1,
+      "title": "Evidence Quotes",
+      "type": "array"
+    },
+    "product_fact_ids": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Product Fact Ids",
+      "type": "array"
+    },
+    "unknowns": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unknowns",
+      "type": "array"
+    }
+  },
+  "required": [
+    "company_id",
+    "contact_id",
+    "subject",
+    "body",
+    "observation",
+    "hypothesis",
+    "hook",
+    "evidence_quotes",
+    "product_fact_ids"
+  ],
+  "title": "Draft",
+  "type": "object"
+}

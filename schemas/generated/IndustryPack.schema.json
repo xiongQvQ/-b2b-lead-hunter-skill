@@ -1,0 +1,86 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "product_fields": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Product Fields",
+      "type": "array"
+    },
+    "buyer_roles": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Buyer Roles",
+      "type": "array"
+    },
+    "evidence_rules": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Rules",
+      "type": "array"
+    },
+    "negative_signals": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Negative Signals",
+      "type": "array"
+    },
+    "query_lanes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Query Lanes",
+      "type": "array"
+    },
+    "role_mapping": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Role Mapping",
+      "type": "object"
+    },
+    "insight_questions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Insight Questions",
+      "type": "array"
+    },
+    "language_terms": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Language Terms",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "product_fields",
+    "buyer_roles",
+    "evidence_rules",
+    "negative_signals",
+    "query_lanes",
+    "role_mapping",
+    "insight_questions",
+    "language_terms"
+  ],
+  "title": "IndustryPack",
+  "type": "object"
+}

@@ -1,0 +1,251 @@
+{
+  "$defs": {
+    "ProductFact": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "kind": {
+          "default": "user_claim",
+          "enum": [
+            "user_claim",
+            "observed_fact"
+          ],
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "source"
+      ],
+      "title": "ProductFact",
+      "type": "object"
+    },
+    "Query": {
+      "additionalProperties": false,
+      "properties": {
+        "lane": {
+          "enum": [
+            "buyer",
+            "trigger",
+            "rfq",
+            "channel",
+            "ecosystem"
+          ],
+          "title": "Lane",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 500,
+          "minLength": 3,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lane",
+        "text"
+      ],
+      "title": "Query",
+      "type": "object"
+    },
+    "Seed": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "domain": {
+          "title": "Domain",
+          "type": "string"
+        },
+        "country": {
+          "title": "Country",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "domain",
+        "country",
+        "source"
+      ],
+      "title": "Seed",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "const": "2.0",
+      "default": "2.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "entry": {
+      "default": "acquisition",
+      "enum": [
+        "acquisition",
+        "enrichment"
+      ],
+      "title": "Entry",
+      "type": "string"
+    },
+    "product_name": {
+      "minLength": 1,
+      "title": "Product Name",
+      "type": "string"
+    },
+    "product_facts": {
+      "items": {
+        "$ref": "#/$defs/ProductFact"
+      },
+      "minItems": 1,
+      "title": "Product Facts",
+      "type": "array"
+    },
+    "country": {
+      "maxLength": 2,
+      "minLength": 2,
+      "pattern": "^[A-Z]{2}$",
+      "title": "Country",
+      "type": "string"
+    },
+    "country_name": {
+      "title": "Country Name",
+      "type": "string"
+    },
+    "language": {
+      "default": "en",
+      "title": "Language",
+      "type": "string"
+    },
+    "icp": {
+      "minLength": 5,
+      "title": "Icp",
+      "type": "string"
+    },
+    "buyer_roles": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Buyer Roles",
+      "type": "array"
+    },
+    "exclusions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Exclusions",
+      "type": "array"
+    },
+    "endpoint": {
+      "default": "contacts",
+      "enum": [
+        "accounts",
+        "contacts",
+        "drafts",
+        "first_outreach"
+      ],
+      "title": "Endpoint",
+      "type": "string"
+    },
+    "target_count": {
+      "default": 10,
+      "maximum": 100,
+      "minimum": 1,
+      "title": "Target Count",
+      "type": "integer"
+    },
+    "candidate_limit": {
+      "default": 30,
+      "maximum": 300,
+      "minimum": 1,
+      "title": "Candidate Limit",
+      "type": "integer"
+    },
+    "pages_per_company": {
+      "default": 3,
+      "maximum": 6,
+      "minimum": 1,
+      "title": "Pages Per Company",
+      "type": "integer"
+    },
+    "contacts_per_company": {
+      "default": 2,
+      "maximum": 3,
+      "minimum": 1,
+      "title": "Contacts Per Company",
+      "type": "integer"
+    },
+    "budget_micro": {
+      "default": 1000000,
+      "minimum": 0,
+      "title": "Budget Micro",
+      "type": "integer"
+    },
+    "max_calls": {
+      "default": 100,
+      "maximum": 1000,
+      "minimum": 1,
+      "title": "Max Calls",
+      "type": "integer"
+    },
+    "industry": {
+      "default": "generic",
+      "enum": [
+        "generic",
+        "optical-transceiver"
+      ],
+      "title": "Industry",
+      "type": "string"
+    },
+    "queries": {
+      "items": {
+        "$ref": "#/$defs/Query"
+      },
+      "maxItems": 20,
+      "title": "Queries",
+      "type": "array"
+    },
+    "seeds": {
+      "items": {
+        "$ref": "#/$defs/Seed"
+      },
+      "maxItems": 300,
+      "title": "Seeds",
+      "type": "array"
+    }
+  },
+  "required": [
+    "product_name",
+    "product_facts",
+    "country",
+    "country_name",
+    "icp",
+    "buyer_roles"
+  ],
+  "title": "Plan",
+  "type": "object"
+}

@@ -1,0 +1,146 @@
+{
+  "$defs": {
+    "Quote": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 5,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "text"
+      ],
+      "title": "Quote",
+      "type": "object"
+    },
+    "Signal": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "rfq",
+            "tender",
+            "project",
+            "expansion",
+            "replacement",
+            "hiring",
+            "catalog",
+            "other"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "statement": {
+          "title": "Statement",
+          "type": "string"
+        },
+        "published_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Published At"
+        },
+        "quotes": {
+          "items": {
+            "$ref": "#/$defs/Quote"
+          },
+          "minItems": 1,
+          "title": "Quotes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "statement",
+        "quotes"
+      ],
+      "title": "Signal",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "company_id": {
+      "title": "Company Id",
+      "type": "string"
+    },
+    "entity_status": {
+      "enum": [
+        "confirmed",
+        "conflict",
+        "unknown"
+      ],
+      "title": "Entity Status",
+      "type": "string"
+    },
+    "country_match": {
+      "title": "Country Match",
+      "type": "boolean"
+    },
+    "buyer_role": {
+      "title": "Buyer Role",
+      "type": "string"
+    },
+    "fit": {
+      "enum": [
+        "qualified",
+        "rejected",
+        "unknown"
+      ],
+      "title": "Fit",
+      "type": "string"
+    },
+    "fit_quotes": {
+      "items": {
+        "$ref": "#/$defs/Quote"
+      },
+      "title": "Fit Quotes",
+      "type": "array"
+    },
+    "signals": {
+      "items": {
+        "$ref": "#/$defs/Signal"
+      },
+      "title": "Signals",
+      "type": "array"
+    },
+    "counter_evidence": {
+      "items": {
+        "$ref": "#/$defs/Quote"
+      },
+      "title": "Counter Evidence",
+      "type": "array"
+    },
+    "unknowns": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unknowns",
+      "type": "array"
+    }
+  },
+  "required": [
+    "company_id",
+    "entity_status",
+    "country_match",
+    "buyer_role",
+    "fit",
+    "fit_quotes"
+  ],
+  "title": "AccountReview",
+  "type": "object"
+}

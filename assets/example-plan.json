@@ -1,0 +1,28 @@
+{
+  "contract_version": "2.0",
+  "entry": "acquisition",
+  "product_name": "10GBASE-LR SFP+ optical transceiver",
+  "product_facts": [
+    {"id": "pf_1", "text": "We offer 10GBASE-LR SFP+ modules, 1310nm, nominal 10km reach, LC connector. Confirm these specifications and the source before live use.", "source": "example only: replace with your confirmed datasheet or supplier declaration", "kind": "user_claim"}
+  ],
+  "country": "BR",
+  "country_name": "Brazil",
+  "language": "pt",
+  "icp": "Brazilian network systems integrators delivering enterprise and data-center network projects and sourcing optical transceivers",
+  "buyer_roles": ["Purchasing Manager", "Network Engineering Manager", "Owner"],
+  "exclusions": ["module manufacturers without third-party procurement", "consumer-only computer repair shops", "directory-only records", "telecom operators requiring vendor certification we cannot provide"],
+  "endpoint": "contacts",
+  "target_count": 1,
+  "candidate_limit": 10,
+  "pages_per_company": 2,
+  "contacts_per_company": 1,
+  "budget_micro": 1000000,
+  "max_calls": 30,
+  "industry": "optical-transceiver",
+  "queries": [
+    {"lane": "buyer", "text": "Brasil integrador redes corporativas transceptor SFP 10G"},
+    {"lane": "trigger", "text": "Brasil integrador expansão rede data center projeto 2026 SFP"},
+    {"lane": "rfq", "text": "Brasil cotação aquisição transceptores SFP 10G 2026"}
+  ],
+  "seeds": []
+}

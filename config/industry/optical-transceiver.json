@@ -1,0 +1,12 @@
+{
+  "id": "optical-transceiver",
+  "version": "1.0.0",
+  "product_fields": ["speed", "form_factor", "wavelength", "reach", "connector", "fiber_type", "DOM_DDM", "temperature", "power_budget", "vendor_coding", "tested_switch_models", "certifications", "MOQ", "lead_time"],
+  "buyer_roles": ["network integrator", "ISP/MSP", "network hardware distributor", "industrial/security integrator", "data center operator"],
+  "evidence_rules": ["Look for active fiber uplinks or network equipment integration, not generic CCTV services alone", "Treat switch brand references as requirements, not proof of our compatibility", "Only claim interoperability using the supplied specific test evidence", "A data center announcement does not prove transceiver sourcing is open to a new supplier"],
+  "negative_signals": ["coax/analog-only CCTV installer", "household Wi-Fi shop", "carrier qualification barriers exceed known supply capabilities", "brand-exclusive distributor with no open sourcing evidence"],
+  "query_lanes": ["buyer", "trigger", "rfq", "channel", "ecosystem"],
+  "role_mapping": {"integrator": "project/network engineer then purchaser", "distributor": "product manager or purchasing manager", "small_ISP": "technical director or owner", "security_project": "network/project manager"},
+  "insight_questions": ["Which network ports and switch models are deployed?", "New project, replacement stock or resale?", "Who owns the approved BOM?", "Can a low-risk interoperability sample help?"],
+  "language_terms": {"en": ["optical transceiver", "SFP+", "network integrator", "fiber uplink", "RFQ"], "pt": ["transceptor óptico", "integrador de redes", "cotação", "licitação", "ampliação"], "es": ["transceptor óptico", "integrador de redes", "cotización", "licitación", "ampliación"]}
+}

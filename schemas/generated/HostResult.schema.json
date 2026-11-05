@@ -1,0 +1,372 @@
+{
+  "$defs": {
+    "AccountReview": {
+      "additionalProperties": false,
+      "properties": {
+        "company_id": {
+          "title": "Company Id",
+          "type": "string"
+        },
+        "entity_status": {
+          "enum": [
+            "confirmed",
+            "conflict",
+            "unknown"
+          ],
+          "title": "Entity Status",
+          "type": "string"
+        },
+        "country_match": {
+          "title": "Country Match",
+          "type": "boolean"
+        },
+        "buyer_role": {
+          "title": "Buyer Role",
+          "type": "string"
+        },
+        "fit": {
+          "enum": [
+            "qualified",
+            "rejected",
+            "unknown"
+          ],
+          "title": "Fit",
+          "type": "string"
+        },
+        "fit_quotes": {
+          "items": {
+            "$ref": "#/$defs/Quote"
+          },
+          "title": "Fit Quotes",
+          "type": "array"
+        },
+        "signals": {
+          "items": {
+            "$ref": "#/$defs/Signal"
+          },
+          "title": "Signals",
+          "type": "array"
+        },
+        "counter_evidence": {
+          "items": {
+            "$ref": "#/$defs/Quote"
+          },
+          "title": "Counter Evidence",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        }
+      },
+      "required": [
+        "company_id",
+        "entity_status",
+        "country_match",
+        "buyer_role",
+        "fit",
+        "fit_quotes"
+      ],
+      "title": "AccountReview",
+      "type": "object"
+    },
+    "ContactReview": {
+      "additionalProperties": false,
+      "properties": {
+        "contact_id": {
+          "title": "Contact Id",
+          "type": "string"
+        },
+        "person_confirmed": {
+          "title": "Person Confirmed",
+          "type": "boolean"
+        },
+        "employment_confirmed": {
+          "title": "Employment Confirmed",
+          "type": "boolean"
+        },
+        "role_relevant": {
+          "title": "Role Relevant",
+          "type": "boolean"
+        },
+        "quotes": {
+          "items": {
+            "$ref": "#/$defs/Quote"
+          },
+          "title": "Quotes",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        }
+      },
+      "required": [
+        "contact_id",
+        "person_confirmed",
+        "employment_confirmed",
+        "role_relevant",
+        "quotes"
+      ],
+      "title": "ContactReview",
+      "type": "object"
+    },
+    "Draft": {
+      "additionalProperties": false,
+      "properties": {
+        "company_id": {
+          "title": "Company Id",
+          "type": "string"
+        },
+        "contact_id": {
+          "title": "Contact Id",
+          "type": "string"
+        },
+        "subject": {
+          "maxLength": 160,
+          "minLength": 3,
+          "title": "Subject",
+          "type": "string"
+        },
+        "body": {
+          "maxLength": 5000,
+          "minLength": 30,
+          "title": "Body",
+          "type": "string"
+        },
+        "observation": {
+          "title": "Observation",
+          "type": "string"
+        },
+        "hypothesis": {
+          "title": "Hypothesis",
+          "type": "string"
+        },
+        "hook": {
+          "title": "Hook",
+          "type": "string"
+        },
+        "evidence_quotes": {
+          "items": {
+            "$ref": "#/$defs/Quote"
+          },
+          "minItems": 1,
+          "title": "Evidence Quotes",
+          "type": "array"
+        },
+        "product_fact_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Product Fact Ids",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        }
+      },
+      "required": [
+        "company_id",
+        "contact_id",
+        "subject",
+        "body",
+        "observation",
+        "hypothesis",
+        "hook",
+        "evidence_quotes",
+        "product_fact_ids"
+      ],
+      "title": "Draft",
+      "type": "object"
+    },
+    "Query": {
+      "additionalProperties": false,
+      "properties": {
+        "lane": {
+          "enum": [
+            "buyer",
+            "trigger",
+            "rfq",
+            "channel",
+            "ecosystem"
+          ],
+          "title": "Lane",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 500,
+          "minLength": 3,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lane",
+        "text"
+      ],
+      "title": "Query",
+      "type": "object"
+    },
+    "Quote": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 5,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "text"
+      ],
+      "title": "Quote",
+      "type": "object"
+    },
+    "Signal": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "rfq",
+            "tender",
+            "project",
+            "expansion",
+            "replacement",
+            "hiring",
+            "catalog",
+            "other"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "statement": {
+          "title": "Statement",
+          "type": "string"
+        },
+        "published_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Published At"
+        },
+        "quotes": {
+          "items": {
+            "$ref": "#/$defs/Quote"
+          },
+          "minItems": 1,
+          "title": "Quotes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "statement",
+        "quotes"
+      ],
+      "title": "Signal",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "task_id": {
+      "title": "Task Id",
+      "type": "string"
+    },
+    "input_hash": {
+      "title": "Input Hash",
+      "type": "string"
+    },
+    "expected_revision": {
+      "title": "Expected Revision",
+      "type": "integer"
+    },
+    "lease_token": {
+      "title": "Lease Token",
+      "type": "string"
+    },
+    "result_status": {
+      "enum": [
+        "completed",
+        "insufficient_evidence",
+        "cannot_complete"
+      ],
+      "title": "Result Status",
+      "type": "string"
+    },
+    "evidence_refs": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Refs",
+      "type": "array"
+    },
+    "unknowns": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unknowns",
+      "type": "array"
+    },
+    "queries": {
+      "items": {
+        "$ref": "#/$defs/Query"
+      },
+      "title": "Queries",
+      "type": "array"
+    },
+    "accounts": {
+      "items": {
+        "$ref": "#/$defs/AccountReview"
+      },
+      "title": "Accounts",
+      "type": "array"
+    },
+    "contacts": {
+      "items": {
+        "$ref": "#/$defs/ContactReview"
+      },
+      "title": "Contacts",
+      "type": "array"
+    },
+    "drafts": {
+      "items": {
+        "$ref": "#/$defs/Draft"
+      },
+      "title": "Drafts",
+      "type": "array"
+    }
+  },
+  "required": [
+    "task_id",
+    "input_hash",
+    "expected_revision",
+    "lease_token",
+    "result_status"
+  ],
+  "title": "HostResult",
+  "type": "object"
+}

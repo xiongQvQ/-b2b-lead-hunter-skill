@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "b2b-lead-hunter"
+version = "1.0.0a1"
+description = "Evidence-first assisted B2B prospecting runtime"
+requires-python = ">=3.11"
+dependencies = ["httpx==0.28.1", "pydantic==2.12.3", "python-dotenv==1.2.1"]
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2"]
+
+[project.scripts]
+leadctl = "lead_hunter.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
